@@ -1,5 +1,13 @@
-/* ALL CSS BELOW IS FROM EXAMPLES, MAY BE DELETED */
-:root {
+body {
+  min-height: 100vh;
+  margin: 0;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -12,7 +20,7 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
+} */
 
 a {
   font-weight: 500;
@@ -21,14 +29,6 @@ a {
 }
 a:hover {
   color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
 }
 
 h1 {
@@ -46,6 +46,7 @@ button {
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
+  margin: 0.5em 0;
 }
 button:hover {
   border-color: #646cff;
@@ -53,6 +54,64 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+.content {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+}
+
+.inputsDiv {
+  min-width: 40%;
+  max-width: 40%;
+  margin-right: 10%;
+}
+
+.CVDiv {
+  width: 100%;
+  /* display: flex; */
+}
+
+.CVContainer {
+  /* These here just temporarily. Will change when content is added to container */
+  max-width: 70%;
+  min-height: 70%;
+  margin: 5% auto; /* Keeps it in the middle of div. Very gud */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+.basicInfoInput {
+  display: flex;
+  flex-direction: column;
+  background-color: #dedede;
+  border-radius: 8px;
+  margin: 2%;
+}
+
+label {
+  font-weight: 600;
+  padding: 0.5em 0.5em;
+}
+
+input {
+  margin: 0.2em 0.2em;
+}
+
+.jobInput {
+  display: flex;
+  flex-direction: column;
+  background-color: #dedede;
+  border-radius: 8px;
+  margin: 2%;
+}
+
+.educationItem {
+  display: flex;
+  flex-direction: column;
+  background-color: #dedede;
+  border-radius: 8px;
+  margin: 2%;
 }
 
 @media (prefers-color-scheme: light) {

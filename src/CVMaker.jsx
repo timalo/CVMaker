@@ -1,37 +1,28 @@
 import { useState } from "react";
+import BasicInfoInput from "./BasicInfoInput.jsx";
+import EducationInput from "./EducationInput.jsx";
+import JobInput from "./JobInput.jsx";
 
-export default function BasicInfoInput() {
-  const [name, setName] = useState("John Doe");
-  const [email, setEmail] = useState("example@mail.com");
-  const [phone, setPhone] = useState("123-456-7890");
-
-  const handleNameChange = (e) => {
-    setName(e.target.value);
-  };
-
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
-
-  const handlePhoneChange = (e) => {
-    setPhone(e.target.value);
-  };
+export default function CVMaker() {
+  const [educationList, setEducationList] = useState([]);
+  const [jobList, setJobList] = useState([]);
+  //Should this ^ be here? Lol dunno, move somewhere else if needed.
 
   return (
-    <div className="inputDiv">
-      <div className="basicInfo">
-        <label>
-          Full Name:
-          <input value={name} onChange={handleNameChange}></input>
-        </label>
-        <label>
-          Email:
-          <input value={email} onChange={handleEmailChange}></input>
-        </label>
-        <label>
-          Phone:
-          <input value={phone} onChange={handlePhoneChange}></input>
-        </label>
+    <div className="content">
+      <div className="inputsDiv">
+        <div className="basicInfoDiv">
+          <BasicInfoInput />
+        </div>
+        <div className="educationsDiv">
+          <EducationInput />
+        </div>
+        <div className="jobsDiv">
+          <JobInput />
+        </div>
+      </div>
+      <div className="CVDiv">
+        <div className="CVContainer"></div>
       </div>
     </div>
   );

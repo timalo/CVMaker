@@ -10,5 +10,3 @@ createRoot(document.getElementById("root")).render(
     <CVMaker />
   </StrictMode>
 );
-
-document.title = "CV Maker";
