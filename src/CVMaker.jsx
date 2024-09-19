@@ -1,11 +1,11 @@
-import { useState } from "react";
+//import { useState } from "react";
 import BasicInfoInput from "./BasicInfoInput.jsx";
 import EducationInput from "./EducationInput.jsx";
 import JobInput from "./JobInput.jsx";
 
 export default function CVMaker() {
-  const [educationList, setEducationList] = useState([]);
-  const [jobList, setJobList] = useState([]);
+  /*   const [educationList, setEducationList] = useState([]);
+  const [jobList, setJobList] = useState([]); */
   //Should this ^ be here? Lol dunno, move somewhere else if needed.
 
   return (

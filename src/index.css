@@ -70,13 +70,15 @@ button:focus-visible {
 
 .CVDiv {
   width: 100%;
-  /* display: flex; */
 }
 
 .CVContainer {
-  /* These here just temporarily. Will change when content is added to container */
+  /* Try to keep the aspect ratio of this close to A4.
+  This would be 1 / 1.4142 = 0.7071 */
   max-width: 70%;
   min-height: 70%;
+  /* These ^ here just temporarily. Will change when content is added to container
+  and the size changes. */
   margin: 5% auto; /* Keeps it in the middle of div. Very gud */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
 }
