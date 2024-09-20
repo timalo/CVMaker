@@ -3,12 +3,12 @@ import { useState } from "react";
 export default function JobInput() {
   const [company, setCompany] = useState("");
   const [position, setPosition] = useState("");
-  const [startDate, setStartDate] = useState(""); //Use month/year dropdowns here?
+  const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
   const [description, setDescription] = useState("");
 
   return (
-    <div className="jobInput">
+    <div className="jobInput inputItem">
       <label>
         Company:
         <input
@@ -22,11 +22,13 @@ export default function JobInput() {
         <input
           value={position}
           onChange={(e) => setPosition(e.target.value)}
+          placeholder="Position"
         ></input>
       </label>
       <label>
         Start Date:
         <input
+          type="month"
           value={startDate}
           onChange={(e) => setStartDate(e.target.value)}
         ></input>
@@ -34,6 +36,7 @@ export default function JobInput() {
       <label>
         End Date:
         <input
+          type="month"
           value={endDate}
           onChange={(e) => setEndDate(e.target.value)}
         ></input>
@@ -43,6 +46,7 @@ export default function JobInput() {
         <input
           value={description}
           onChange={(e) => setDescription(e.target.value)}
+          placeholder="Job Description"
         ></input>
       </label>
       <br />

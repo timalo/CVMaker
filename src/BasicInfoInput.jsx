@@ -1,9 +1,9 @@
 import { useState } from "react";
 
 export default function BasicInfoInput() {
-  const [name, setName] = useState("John Doe");
-  const [email, setEmail] = useState("example@mail.com");
-  const [phone, setPhone] = useState("123-456-7890");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
 
   const handleNameChange = (e) => {
     setName(e.target.value);
@@ -18,18 +18,30 @@ export default function BasicInfoInput() {
   };
 
   return (
-    <div className="basicInfoInput">
+    <div className="basicInfoInput inputItem">
       <label>
         Full Name:
-        <input value={name} onChange={handleNameChange}></input>
+        <input
+          placeholder="John Doe"
+          value={name}
+          onChange={handleNameChange}
+        ></input>
       </label>
       <label>
         Email:
-        <input value={email} onChange={handleEmailChange}></input>
+        <input
+          placeholder="example@mail.com"
+          value={email}
+          onChange={handleEmailChange}
+        ></input>
       </label>
       <label>
         Phone:
-        <input value={phone} onChange={handlePhoneChange}></input>
+        <input
+          placeholder="123456789"
+          value={phone}
+          onChange={handlePhoneChange}
+        ></input>
       </label>
     </div>
   );

@@ -1,13 +1,13 @@
 import { useState } from "react";
 
 export default function EducationInput() {
-  const [school, setSchool] = useState("School Name");
-  const [degree, setDegree] = useState("Degree");
+  const [school, setSchool] = useState("");
+  const [degree, setDegree] = useState("");
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
 
   return (
-    <div className="educationItem">
+    <div className="educationItem inputItem">
       <label>
         School:
         <input
@@ -27,6 +27,7 @@ export default function EducationInput() {
       <label>
         Start Date:
         <input
+          type="month"
           value={startDate}
           onChange={(e) => setStartDate(e.target.value)}
         ></input>
@@ -34,15 +35,11 @@ export default function EducationInput() {
       <label>
         End Date:
         <input
+          type="month"
           value={endDate}
           onChange={(e) => setEndDate(e.target.value)}
         ></input>
       </label>
-      <br />
-      <div className="buttonsDiv">
-        <button className="newEduBtn">+</button>
-        <button className="removeEduBtn">-</button>
-      </div>
     </div>
   );
 }

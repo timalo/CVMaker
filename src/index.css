@@ -7,6 +7,12 @@ body {
   min-height: 100vh;
 }
 
+h2 {
+  text-align: center;
+  padding-top: 0.5em;
+  margin: 0;
+}
+
 /* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -46,7 +52,8 @@ button {
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
-  margin: 0.5em 0;
+  margin: 0.5em 0.5em;
+  border: solid 2px black;
 }
 button:hover {
   border-color: #646cff;
@@ -86,34 +93,37 @@ button:focus-visible {
 .basicInfoInput {
   display: flex;
   flex-direction: column;
-  background-color: #dedede;
-  border-radius: 8px;
-  margin: 2%;
 }
 
 label {
   font-weight: 600;
-  padding: 0.5em 0.5em;
 }
 
 input {
   margin: 0.2em 0.2em;
+  width: 30%;
+  float: right;
+  margin-right: 15em;
+  box-sizing: border-box;
 }
 
-.jobInput {
-  display: flex;
-  flex-direction: column;
-  background-color: #dedede;
+.inputDiv {
   border-radius: 8px;
   margin: 2%;
+  background-color: #dedede;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.inputItem {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  padding: 2%;
 }
 
 .educationItem {
   display: flex;
   flex-direction: column;
-  background-color: #dedede;
-  border-radius: 8px;
-  margin: 2%;
 }
 
 @media (prefers-color-scheme: light) {
