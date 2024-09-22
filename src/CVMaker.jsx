@@ -1,4 +1,4 @@
-//import { useState } from "react";
+import { useState } from "react";
 import BasicInfoInput from "./BasicInfoInput.jsx";
 import EducationInput from "./EducationInput.jsx";
 import JobInput from "./JobInput.jsx";
@@ -6,7 +6,9 @@ import JobInput from "./JobInput.jsx";
 export default function CVMaker() {
   /*   const [educationList, setEducationList] = useState([]);
   const [jobList, setJobList] = useState([]); */
-  //Should this ^ be here? Lol dunno, move somewhere else if needed.
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
 
   return (
     <div className="content">
@@ -14,7 +16,11 @@ export default function CVMaker() {
         <div className="basicInfoDiv inputDiv">
           <h2>Basic info</h2>
           <hr />
-          <BasicInfoInput />
+          <BasicInfoInput
+            setName={setName}
+            setEmail={setEmail}
+            setPhone={setPhone}
+          />
         </div>
         <div className="educationsDiv inputDiv">
           <h2>Education</h2>
@@ -32,7 +38,12 @@ export default function CVMaker() {
         </div>
       </div>
       <div className="CVDiv">
-        <div className="CVContainer"></div>
+        <div className="CVContainer">
+          <h1>{name}</h1>
+          <h2>{email}</h2>
+          <h2>{phone}</h2>
+          <hr />
+        </div>
       </div>
     </div>
   );

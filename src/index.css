@@ -1,6 +1,7 @@
 body {
   min-height: 100vh;
   margin: 0;
+  min-width: 1200px;
 }
 
 #root {
@@ -40,6 +41,7 @@ a:hover {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  text-align: center;
 }
 
 button {
@@ -72,7 +74,6 @@ button:focus-visible {
 .inputsDiv {
   min-width: 40%;
   max-width: 40%;
-  margin-right: 10%;
 }
 
 .CVDiv {
@@ -84,6 +85,7 @@ button:focus-visible {
   This would be 1 / 1.4142 = 0.7071 */
   max-width: 70%;
   min-height: 70%;
+  min-width: 500px;
   /* These ^ here just temporarily. Will change when content is added to container
   and the size changes. */
   margin: 5% auto; /* Keeps it in the middle of div. Very gud */
@@ -100,10 +102,8 @@ label {
 }
 
 input {
-  margin: 0.2em 0.2em;
-  width: 30%;
-  float: right;
-  margin-right: 15em;
+  margin: 0.2em 0;
+  width: clamp(12em, 60%, 20em);
   box-sizing: border-box;
 }
 
@@ -112,6 +112,8 @@ input {
   margin: 2%;
   background-color: #dedede;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  min-width: 450px;
+  display: table;
 }
 
 .inputItem {

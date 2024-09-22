@@ -41,14 +41,13 @@ export default function JobInput() {
           onChange={(e) => setEndDate(e.target.value)}
         ></input>
       </label>
-      <label>
-        Description:
-        <input
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-          placeholder="Job Description"
-        ></input>
-      </label>
+      <label>Description:</label>
+      <textarea
+        className="descriptionInput"
+        value={description}
+        onChange={(e) => setDescription(e.target.value)}
+        placeholder="Job Description"
+      ></textarea>
       <br />
       <div className="buttonsDiv">
         <button className="newJobBtn">+</button>
