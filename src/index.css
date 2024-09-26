@@ -60,6 +60,7 @@ button {
 button:hover {
   border-color: #646cff;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -88,7 +89,7 @@ button:focus-visible {
   min-width: 500px;
   /* These ^ here just temporarily. Will change when content is added to container
   and the size changes. */
-  margin: 5% auto; /* Keeps it in the middle of div. Very gud */
+  /* margin: 5% auto; */ /* Keeps it in the middle of div. Very gud */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
 }
 
@@ -126,6 +127,22 @@ input {
 .educationItem {
   display: flex;
   flex-direction: column;
+}
+
+.inputPreviewItem {
+  border: 2px solid black;
+  border-radius: 8px;
+  margin: 2%;
+}
+
+.inputPreviewItem:hover {
+  background-color: #806cda;
+  cursor: pointer;
+}
+
+.inputPreviewItem > * {
+  margin: 2%;
+  font-weight: 600;
 }
 
 @media (prefers-color-scheme: light) {

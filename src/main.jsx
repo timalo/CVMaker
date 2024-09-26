@@ -1,7 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 
-import CVMaker from "./CVMaker.jsx";
+import CVMaker from "./components/CVMaker.jsx";
 
 import "./index.css";
 
