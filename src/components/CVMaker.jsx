@@ -43,6 +43,7 @@ export default function CVMaker() {
           <hr />
           {showEduForm ? (
             <EducationInput
+              selectedEdu={selectedEdu}
               setEducation={setEducations}
               setSelectedEdu={setSelectedEdu}
               showEduForm={setShowEduForm}
@@ -55,7 +56,7 @@ export default function CVMaker() {
                   className="inputPreviewItem"
                   onClick={() => {
                     setShowEduForm(true);
-                    setSelectedEdu({});
+                    setSelectedEdu(edu);
                   }}
                 >
                   <p>
@@ -66,7 +67,13 @@ export default function CVMaker() {
                 </div>
               ))}
               <center>
-                <button className="newEduBtn">
+                <button
+                  className="newEduBtn"
+                  onClick={() => {
+                    setShowEduForm(true);
+                    setSelectedEdu({});
+                  }}
+                >
                   <strong>Add Education</strong>
                 </button>
               </center>
@@ -78,9 +85,10 @@ export default function CVMaker() {
           <hr />
           {showJobForm ? (
             <JobInput
+              selectedJob={selectedJob}
               setJobs={setJobs}
               setSelectedJob={setSelectedJob}
-              ShowJobForm={setShowJobForm}
+              showJobForm={setShowJobForm}
             />
           ) : (
             <div className="inputPreviews">
@@ -90,7 +98,7 @@ export default function CVMaker() {
                   className="inputPreviewItem"
                   onClick={() => {
                     setShowJobForm(true);
-                    setSelectedJob({});
+                    setSelectedJob(job);
                   }}
                 >
                   <p>

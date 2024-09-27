@@ -1,10 +1,7 @@
-import { useState } from "react";
-
 export default function JobInput(props) {
   function handleJobSubmit(e) {
     e.preventDefault();
     console.log("submit job!");
-    let newJob = {};
   }
 
   function deleteJob(e) {
@@ -23,15 +20,45 @@ export default function JobInput(props) {
     <div className="jobInput inputItem">
       <label>
         Company:
-        <input placeholder="Company Name"></input>
+        <input
+          placeholder="Company Name"
+          required
+          onChange={(e) =>
+            props.setSelectedJob({
+              ...props.selectedJob,
+              company: e.target.value,
+            })
+          }
+          value={props.selectedJob.company}
+        ></input>
       </label>
       <label>
         Position:
-        <input placeholder="Position"></input>
+        <input
+          placeholder="Position"
+          required
+          onChange={(e) =>
+            props.setSelectedJob({
+              ...props.selectedJob,
+              title: e.target.value,
+            })
+          }
+          value={props.selectedJob.title}
+        ></input>
       </label>
       <label>
         Start Date:
-        <input type="month"></input>
+        <input
+          type="month"
+          required
+          onChange={(e) =>
+            props.setSelectedJob({
+              ...props.selectedJob,
+              endDate: e.target.value,
+            })
+          }
+          value={props.selectedJob.startDate}
+        ></input>
       </label>
       <label>
         End Date:
@@ -39,6 +66,7 @@ export default function JobInput(props) {
       </label>
       <label>Description:</label>
       <textarea
+        required
         rows="5"
         className="descriptionInput"
         placeholder="Job Description"
