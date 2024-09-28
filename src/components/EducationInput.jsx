@@ -1,9 +1,24 @@
 export default function EducationInput(props) {
   function handleEduSubmit(e) {
     e.preventDefault();
-    console.log("submit!");
-    let newEdu = { ...props.selectedEdu, id: crypto.randomUUID() };
-    console.log(newEdu);
+    console.log("submit edu!");
+    if (!props.selectedEdu.id) {
+      console.log("new edu!");
+      //New edu as it doesn't have id yet.
+      let newEdu = { ...props.selectedEdu, id: crypto.randomUUID() };
+      props.setEducation([...props.educationList, newEdu]);
+      props.setSelectedEdu({});
+      props.showEduForm(false);
+    } else {
+      console.log("update edu!");
+      //Update edu as it has id.
+      let updatedEduList = props.educationList.map((edu) => {
+        return edu.id === props.selectedEdu.id ? props.selectedEdu : edu;
+      });
+      props.setEducation(updatedEduList);
+      props.setSelectedEdu({});
+      props.showEduForm(false);
+    }
   }
 
   function deleteEdu(e) {
@@ -80,9 +95,11 @@ export default function EducationInput(props) {
           ></input>
         </label>
         <div className="buttonsDiv">
-          <button className="deleteBtn" onClick={deleteEdu}>
-            Delete
-          </button>
+          {props.selectedEdu.id ? (
+            <button className="deleteBtn" onClick={deleteEdu}>
+              Delete
+            </button>
+          ) : null}
           <button className="cancelBtn" onClick={cancelEduSubmit}>
             Cancel
           </button>

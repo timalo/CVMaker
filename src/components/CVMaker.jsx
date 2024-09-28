@@ -44,6 +44,7 @@ export default function CVMaker() {
           {showEduForm ? (
             <EducationInput
               selectedEdu={selectedEdu}
+              educationList={educations}
               setEducation={setEducations}
               setSelectedEdu={setSelectedEdu}
               showEduForm={setShowEduForm}
@@ -71,7 +72,13 @@ export default function CVMaker() {
                   className="newEduBtn"
                   onClick={() => {
                     setShowEduForm(true);
-                    setSelectedEdu({});
+                    //Init selectedEdu to empty object.
+                    setSelectedEdu({
+                      school: "",
+                      degree: "",
+                      startDate: "",
+                      endDate: "",
+                    });
                   }}
                 >
                   <strong>Add Education</strong>

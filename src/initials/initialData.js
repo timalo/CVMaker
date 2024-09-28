@@ -7,17 +7,17 @@ const initialData = {
   educations: [
     {
       id: crypto.randomUUID(),
-      school: "Sample school",
-      degree: "Sample degree",
-      startDate: "",
-      endDate: "",
+      school: "Other school",
+      degree: "Other degree",
+      startDate: "2012-07",
+      endDate: "2015-05",
     },
     {
       id: crypto.randomUUID(),
-      school: "Other school",
-      degree: "Other degree",
-      startDate: "",
-      endDate: "",
+      school: "Sample school",
+      degree: "Sample degree",
+      startDate: "2015-07",
+      endDate: "2020-05",
     },
   ],
 
