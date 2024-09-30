@@ -11,6 +11,7 @@ export default function CVMaker() {
   const [name, setName] = useState("John Doe");
   const [email, setEmail] = useState("johnDoe@email.com");
   const [phone, setPhone] = useState("123-456-7890");
+  const [location, setLocation] = useState("New York");
 
   //Educations should hold the entire array of educations, so we can pass it to the Resume component.
   //Same for jobs.
@@ -33,9 +34,11 @@ export default function CVMaker() {
             setName={setName}
             setEmail={setEmail}
             setPhone={setPhone}
+            setLocation={setLocation}
             name={name}
             email={email}
             phone={phone}
+            location={location}
           />
         </div>
         <div className="educationsDiv inputDiv">
@@ -144,14 +147,10 @@ export default function CVMaker() {
             name={name}
             email={email}
             phone={phone}
+            location={location}
             educations={educations}
             jobs={jobs}
           />
-          <center>
-            <strong>
-              This poop is here just temporarily to show the end of content
-            </strong>
-          </center>
         </div>
       </div>
     </div>

@@ -73,23 +73,19 @@ button:focus-visible {
 }
 
 .inputsDiv {
-  min-width: 40%;
-  max-width: 40%;
+  width: 30%;
 }
 
 .CVDiv {
   width: 100%;
+  margin: 0 5%;
 }
 
 .CVContainer {
   /* Try to keep the aspect ratio of this close to A4.
   This would be 1 / 1.4142 = 0.7071 */
-  max-width: 70%;
-  min-height: 70%;
-  min-width: 500px;
-  /* These ^ here just temporarily. Will change when content is added to container
-  and the size changes. */
-  /* margin: 5% auto; */ /* Keeps it in the middle of div. Very gud */
+
+  margin: 1% auto;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
 }
 
@@ -144,6 +140,38 @@ input {
   margin: 2%;
   font-weight: 600;
 }
+
+/* Resume styling start*/
+
+.basicInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #2dbcfa;
+  color: white;
+  font-weight: 700;
+}
+
+.resumeName {
+  font-size: 2.5em;
+  margin: 0.5em 0 0.5em 0; /* small-ish top margin but no other ones */
+}
+
+.basicInfoRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.basicInfoItem {
+  width: 33%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Resume styling end */
 
 @media (prefers-color-scheme: light) {
   :root {

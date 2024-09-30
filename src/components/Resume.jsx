@@ -2,10 +2,12 @@ export default function Resume(props) {
   return (
     <div className="resume">
       <div className="basicInfo">
-        <h2>Basic Info</h2>
-        <p>Name: {props.name}</p>
-        <p>Email: {props.email}</p>
-        <p>Phone: {props.phone}</p>
+        <p className="resumeName"> {props.name}</p>
+        <div className="basicInfoRow">
+          <div className="basicInfoItem">{props.email}</div>
+          <div className="basicInfoItem">{props.phone}</div>
+          <div className="basicInfoItem">{props.location}</div>
+        </div>
       </div>
       <div className="education">
         <h2>Education</h2>
@@ -22,6 +24,7 @@ export default function Resume(props) {
         <h2>Work Experience</h2>
         {props.jobs.map((job) => (
           <div key={job.id} className="jobItem">
+            {/* Divide these into left and right */}
             <p>Company: {job.company}</p>
             <p>Position: {job.position}</p>
             <p>Start Date: {job.jobStartDate}</p>

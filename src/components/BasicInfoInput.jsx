@@ -11,15 +11,27 @@ export default function BasicInfoInput(props) {
     props.setPhone(e.target.value);
   };
 
+  const handleLocationChange = (e) => {
+    props.setLocation(e.target.value);
+  };
+
   return (
     <div className="basicInfoInput inputItem">
       <label>
         Full Name:
-        <input onChange={handleNameChange} value={props.name}></input>
+        <input
+          maxLength="25"
+          onChange={handleNameChange}
+          value={props.name}
+        ></input>
       </label>
       <label>
         Email:
-        <input onChange={handleEmailChange} value={props.email}></input>
+        <input
+          maxLength="35"
+          onChange={handleEmailChange}
+          value={props.email}
+        ></input>
       </label>
       <label>
         Phone:
@@ -27,6 +39,14 @@ export default function BasicInfoInput(props) {
           maxLength="15"
           onChange={handlePhoneChange}
           value={props.phone}
+        ></input>
+      </label>
+      <label>
+        Location:
+        <input
+          maxLength="25"
+          onChange={handleLocationChange}
+          value={props.location}
         ></input>
       </label>
     </div>
