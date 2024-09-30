@@ -1,12 +1,31 @@
 export default function JobInput(props) {
   function handleJobSubmit(e) {
     e.preventDefault();
-    console.log("submit job!");
+    if (!props.selectedJob.id) {
+      //New edu since no id yet
+      let newJob = { ...props.selectedJob, id: crypto.randomUUID() };
+      props.setJobs([...props.jobList, newJob]);
+      props.setSelectedJob({});
+      props.showJobForm(false);
+    } else {
+      //id exists so we're editing.
+      let updatedJobList = props.jobList.map((job) => {
+        return job.id === props.selectedJob.id ? props.selectedJob : job;
+      });
+      props.setJobs(updatedJobList);
+      props.setSelectedJob({});
+      props.showJobForm(false);
+    }
   }
 
   function deleteJob(e) {
     e.preventDefault();
-    console.log("delete!");
+    let updatedJobList = props.jobList.filter(
+      (job) => job.id !== props.selectedJob.id
+    );
+    props.setJobs(updatedJobList);
+    props.setSelectedJob({});
+    props.showJobForm(false);
   }
 
   function cancelJobSubmit(e) {

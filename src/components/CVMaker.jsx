@@ -72,7 +72,7 @@ export default function CVMaker() {
                   className="newEduBtn"
                   onClick={() => {
                     setShowEduForm(true);
-                    //Init selectedEdu to empty object.
+                    //Init selectedEdu to empty object since console was complaining about input fields being undefined
                     setSelectedEdu({
                       school: "",
                       degree: "",
@@ -93,6 +93,7 @@ export default function CVMaker() {
           {showJobForm ? (
             <JobInput
               selectedJob={selectedJob}
+              jobList={jobs}
               setJobs={setJobs}
               setSelectedJob={setSelectedJob}
               showJobForm={setShowJobForm}
@@ -120,7 +121,13 @@ export default function CVMaker() {
                   className="newJobBtn"
                   onClick={() => {
                     setShowJobForm(true);
-                    setSelectedJob({});
+                    //Init selectedJob to empty object for the same reason as for the edu
+                    setSelectedJob({
+                      company: "",
+                      title: "",
+                      startDate: "",
+                      endDate: "",
+                    });
                   }}
                 >
                   <strong>Add Work Experience</strong>

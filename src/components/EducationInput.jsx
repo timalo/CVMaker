@@ -10,8 +10,8 @@ export default function EducationInput(props) {
       props.setSelectedEdu({});
       props.showEduForm(false);
     } else {
+      //If the edu has id, it means it's an existing edu.
       console.log("update edu!");
-      //Update edu as it has id.
       let updatedEduList = props.educationList.map((edu) => {
         return edu.id === props.selectedEdu.id ? props.selectedEdu : edu;
       });
@@ -24,6 +24,13 @@ export default function EducationInput(props) {
   function deleteEdu(e) {
     e.preventDefault();
     console.log("delete!");
+    //Make a new eduList without the selected edu and set it as the new list.
+    let updatedEduList = props.educationList.filter(
+      (edu) => edu.id !== props.selectedEdu.id
+    );
+    props.setEducation(updatedEduList);
+    props.setSelectedEdu({});
+    props.showEduForm(false);
   }
 
   function cancelEduSubmit(e) {
@@ -96,6 +103,7 @@ export default function EducationInput(props) {
         </label>
         <div className="buttonsDiv">
           {props.selectedEdu.id ? (
+            //Could implement a "are you sure?" modal or smth here if I feel like it.
             <button className="deleteBtn" onClick={deleteEdu}>
               Delete
             </button>
