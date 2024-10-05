@@ -10,7 +10,7 @@ export default function EducationInput(props) {
       props.setSelectedEdu({});
       props.showEduForm(false);
     } else {
-      //If the edu has id, it means it's an existing edu.
+      //If the selected edu has an id, it means it's an existing edu.
       console.log("update edu!");
       let updatedEduList = props.educationList.map((edu) => {
         return edu.id === props.selectedEdu.id ? props.selectedEdu : edu;

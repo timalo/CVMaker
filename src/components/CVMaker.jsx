@@ -65,7 +65,7 @@ export default function CVMaker() {
                 >
                   <p>
                     <strong>
-                      {edu.school} | {edu.degree}
+                      {edu.degree} | {edu.school}
                     </strong>
                   </p>
                 </div>
@@ -114,7 +114,7 @@ export default function CVMaker() {
                 >
                   <p>
                     <strong>
-                      {job.company} | {job.title}
+                      {job.title} | {job.company}
                     </strong>
                   </p>
                 </div>
@@ -130,6 +130,7 @@ export default function CVMaker() {
                       title: "",
                       startDate: "",
                       endDate: "",
+                      description: "",
                     });
                   }}
                 >

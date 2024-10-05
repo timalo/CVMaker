@@ -41,7 +41,6 @@ export default function JobInput(props) {
         Company:
         <input
           placeholder="Company Name"
-          required
           onChange={(e) =>
             props.setSelectedJob({
               ...props.selectedJob,
@@ -55,7 +54,6 @@ export default function JobInput(props) {
         Position:
         <input
           placeholder="Position"
-          required
           onChange={(e) =>
             props.setSelectedJob({
               ...props.selectedJob,
@@ -69,11 +67,10 @@ export default function JobInput(props) {
         Start Date:
         <input
           type="month"
-          required
           onChange={(e) =>
             props.setSelectedJob({
               ...props.selectedJob,
-              endDate: e.target.value,
+              startDate: e.target.value,
             })
           }
           value={props.selectedJob.startDate}
@@ -81,11 +78,27 @@ export default function JobInput(props) {
       </label>
       <label>
         End Date:
-        <input type="month"></input>
+        <input
+          type="month"
+          onChange={(e) =>
+            props.setSelectedJob({
+              ...props.selectedJob,
+              endDate: e.target.value,
+            })
+          }
+          value={props.selectedJob.endDate}
+        ></input>
       </label>
       <label>Description:</label>
       <textarea
         required
+        onChange={(e) =>
+          props.setSelectedJob({
+            ...props.selectedJob,
+            description: e.target.value,
+          })
+        }
+        value={props.selectedJob.description}
         rows="5"
         className="descriptionInput"
         placeholder="Job Description"
